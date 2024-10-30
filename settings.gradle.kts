@@ -12,8 +12,12 @@ pluginManagement {
         }
         mavenCentral()
         gradlePluginPortal()
+        maven { url = uri("https://dl.google.com/dl/android/maven2/") }
     }
-    plugins { id("com.meta.spatial.plugin") version metaSpatialSdkVersion }
+    plugins {
+        id("com.meta.spatial.plugin") version metaSpatialSdkVersion
+        id("com.google.devtools.ksp") version "2.0.0-1.0.24"
+    }
 }
 dependencyResolutionManagement {
     repositoriesMode.set(RepositoriesMode.FAIL_ON_PROJECT_REPOS)
@@ -25,3 +29,11 @@ dependencyResolutionManagement {
 
 rootProject.name = "Torrid"
 include(":app")
+
+dependencyResolutionManagement {
+    repositoriesMode.set(RepositoriesMode.FAIL_ON_PROJECT_REPOS)
+    repositories {
+        google()
+        mavenCentral()
+    }
+}
