@@ -1,0 +1,83 @@
+scene: docref:Main.scene
+entities:
+  com.meta.models.AssetFolder:
+    - components:
+        com.meta.components.AssetFolder:
+          assets:
+            - ref:Mesh.034
+            - ref:Mesh.036
+            - ref:Mesh.037
+        com.meta.components.Name:
+          name: environment
+  com.meta.models.AssetRoot:
+    - components:
+        com.meta.components.AssetMetadata:
+          {}
+        com.meta.components.AssetRoot:
+          defaultScene: ref:Scene
+          scenes:
+            - ref:Scene
+  com.meta.models.Geometry:
+  com.meta.models.Image:
+  com.meta.models.Material:
+  com.meta.models.Mesh:
+    - components:
+        com.meta.components.Mesh:
+          morphTargetNames:
+            []
+          morphTargetWeights:
+            []
+          primitives:
+            - ref:Primitive1
+        com.meta.components.Name:
+          name: Mesh.037
+      tag: Mesh.037
+    - components:
+        com.meta.components.Mesh:
+          morphTargetNames:
+            []
+          morphTargetWeights:
+            []
+          primitives:
+            - ref:Primitive
+        com.meta.components.Name:
+          name: Mesh.036
+      tag: Mesh.036
+    - components:
+        com.meta.components.Mesh:
+          morphTargetNames:
+            []
+          morphTargetWeights:
+            []
+          primitives:
+            - ref:Primitive2
+        com.meta.components.Name:
+          name: Mesh.034
+      tag: Mesh.034
+  com.meta.models.Primitive:
+    - components:
+        com.meta.components.Primitive:
+          indexCount: 1356
+          mode: 4
+          vertexCount: 543
+          geometry: ref:Geometry
+          material: ref:deskScreenBake_mat
+      tag: Primitive2
+    - components:
+        com.meta.components.Primitive:
+          indexCount: 46752
+          mode: 4
+          vertexCount: 12696
+          geometry: ref:Geometry1
+          material: ref:floorBake_mat
+      tag: Primitive1
+    - components:
+        com.meta.components.Primitive:
+          indexCount: 6336
+          mode: 4
+          vertexCount: 2103
+          geometry: ref:Geometry2
+          material: ref:ceilingBake_mat
+      tag: Primitive
+metadata:
+  version: 1.0
