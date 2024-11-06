@@ -66,7 +66,7 @@ class MainActivity : AppSystemActivity() {
 
         scene.setViewOrigin(0.0f, 0.0f, 2.0f, 180.0f)
 
-        Entity.create(
+        val skyboxEntity = Entity.create(
             listOf(
                 Mesh(Uri.parse("mesh://skybox")),
                 Material().apply {
@@ -74,6 +74,7 @@ class MainActivity : AppSystemActivity() {
                     unlit = true // Prevent scene lighting from affecting the skybox
                 },
                 Transform(Pose(Vector3(x = 0f, y = 0f, z = 0f)))))
+        scene.addEntity(skyboxEntity)
     }
 
     private fun loadGLXF(): Job {
