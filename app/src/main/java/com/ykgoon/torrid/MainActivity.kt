@@ -75,6 +75,11 @@ class MainActivity : AppSystemActivity() {
               unlit = true // Prevent scene lighting from affecting the skybox
             },
             Transform(Pose(Vector3(x = 0f, y = 0f, z = 0f)))))
+
+    // Load URL in WebView
+    val webView = findViewById<WebView>(R.id.webview)
+    webView.settings.javaScriptEnabled = true
+    webView.loadUrl("https://ykgoon.com")
   }
 
   override fun registerPanels(): List<PanelRegistration> {
