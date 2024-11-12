@@ -2,6 +2,7 @@ package com.ykgoon.torrid
 
 import android.net.Uri
 import android.os.Bundle
+import android.webkit.WebView
 import com.meta.spatial.castinputforward.CastInputForwardFeature
 import com.meta.spatial.core.Entity
 import com.meta.spatial.core.Pose
