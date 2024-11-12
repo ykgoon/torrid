@@ -3,6 +3,7 @@ package com.ykgoon.torrid
 import android.net.Uri
 import android.os.Bundle
 import android.webkit.WebView
+import android.webkit.WebViewClient
 import com.meta.spatial.castinputforward.CastInputForwardFeature
 import com.meta.spatial.core.Entity
 import com.meta.spatial.core.Pose
@@ -76,11 +77,6 @@ class MainActivity : AppSystemActivity() {
               unlit = true // Prevent scene lighting from affecting the skybox
             },
             Transform(Pose(Vector3(x = 0f, y = 0f, z = 0f)))))
-
-    // Load URL in WebView
-    val webView = findViewById<WebView>(R.id.webview)
-    webView.settings.javaScriptEnabled = true
-    webView.loadUrl("https://ykgoon.com")
   }
 
   override fun registerPanels(): List<PanelRegistration> {
@@ -93,6 +89,25 @@ class MainActivity : AppSystemActivity() {
             height = 1.5f
             enableLayer = true
             enableTransparent = true
+          }
+          panel {
+            val webView: WebView? = rootView?.findViewById<WebView>(R.id.webview)
+            webView?.settings?.javaScriptEnabled = true
+            webView?.settings?.setLoadWithOverviewMode(true)
+            webView?.settings?.setUseWideViewPort(true)
+            webView?.settings?.userAgentString =
+              "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/116.0.0.0"
+            webView?.webViewClient =
+              object : WebViewClient() {
+                      override fun shouldOverrideUrlLoading(
+                          view: WebView?,
+                          url: String?
+                      ): Boolean {
+                          view?.loadUrl(url ?: "")
+                          return true
+                      }
+              }
+            webView?.loadUrl("https://ykgoon.com")
           }
         })
   }
