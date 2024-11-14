@@ -26,7 +26,7 @@ entities:
       tag: Environment
     - components:
         com.meta.spatial.toolkit.Panel:
-          panel: "@layout/ui"
+          panel: "@layout/browser"
         com.meta.spatial.toolkit.PanelDimensions:
           {}
         com.meta.components.Animatable:

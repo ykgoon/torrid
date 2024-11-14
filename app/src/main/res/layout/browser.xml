@@ -9,20 +9,6 @@
   android:clipToOutline="true"
 >
 
-  <!--Heading-->
-  <TextView
-    android:gravity="center"
-    android:id="@+id/title_text_view"
-    android:layout_height="wrap_content"
-    android:layout_marginTop="8dp"
-    android:layout_width="match_parent"
-    android:text="Welcome"
-    android:textSize="36dp"
-    android:textStyle="bold"
-    android:textColor="#ffffff"
-  />
-
-  <!-- WebView to load URL -->
   <WebView
     android:id="@+id/webview"
     android:layout_width="match_parent"

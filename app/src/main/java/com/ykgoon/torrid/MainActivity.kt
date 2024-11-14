@@ -81,7 +81,7 @@ class MainActivity : AppSystemActivity() {
 
   override fun registerPanels(): List<PanelRegistration> {
     return listOf(
-        PanelRegistration(R.layout.ui) {
+        PanelRegistration(R.layout.browser) {
           config {
             themeResourceId = R.style.PanelAppThemeTransparent
             includeGlass = false
